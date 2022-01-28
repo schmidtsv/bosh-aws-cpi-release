@@ -186,7 +186,7 @@ module Bosh::AwsCloud
         size: @vm_cloud_props.root_disk.size,
         type: @vm_cloud_props.root_disk.type,
         iops: @vm_cloud_props.root_disk.iops,
-        throughput: @vm_cloud_props.throughput
+        throughput: @vm_cloud_props.root_disk.throughput,
         virtualization_type: @virtualization_type,
         root_device_name: root_device_name,
       )
