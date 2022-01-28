@@ -69,7 +69,7 @@ module Bosh
         end
 
         if @type == 'gp3' && @throughput != nil && @throughput > 0
-          root_device[:throguhput] == @throughput
+          root_device[:throughput] == @throughput
         end
 
         {
