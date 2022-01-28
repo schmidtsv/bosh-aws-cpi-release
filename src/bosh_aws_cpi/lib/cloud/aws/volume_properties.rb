@@ -60,7 +60,11 @@ module Bosh
           root_device[:volume_size] = size_in_gb
         end
 
-        if @type.match?(/io1|gp3/) && @iops != nil && @iops > 0
+        if @type == 'io1' && @iops > 0
+          root_device[:iops] = @iops
+        end
+
+        if @type == 'gp3' && @iops > 0
           root_device[:iops] = @iops
         end
 
