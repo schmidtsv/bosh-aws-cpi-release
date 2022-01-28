@@ -70,7 +70,7 @@ module Bosh::AwsCloud
     def initialize(cloud_properties, global_config)
       @type = cloud_properties['type']
       @iops = cloud_properties['iops']
-      @throughput - cloud_properties['throughput']
+      @throughput = cloud_properties['throughput']
       @encrypted = global_config.aws.encrypted
       @encrypted = !!cloud_properties['encrypted'] if cloud_properties.key?('encrypted')
 
