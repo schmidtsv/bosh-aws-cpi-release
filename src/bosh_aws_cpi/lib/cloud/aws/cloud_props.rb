@@ -158,7 +158,7 @@ module Bosh::AwsCloud
     end
 
     class Disk
-      attr_reader :size, :type, :iops, :disk
+      attr_reader :size, :type, :iops, :throughput, :disk
 
       def initialize(disk)
         if disk
@@ -167,6 +167,7 @@ module Bosh::AwsCloud
           @size = disk['size']
           @type = disk['type']
           @iops = disk['iops']
+          @throughput = disk['throughput']
         end
       end
 
