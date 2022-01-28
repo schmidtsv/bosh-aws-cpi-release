@@ -63,12 +63,12 @@ module Bosh
         if @type == 'io1' && @iops > 0
           root_device[:iops] = @iops
         end
-
-        if @type == 'gp3' && @iops > 0
+        #On GP3 you can leave those values empty and get 3000 iops/125mb/s throughput
+        if @type == 'gp3' && @iops != nil && @iops > 0
           root_device[:iops] = @iops
         end
 
-        if @type == 'gp3' && @throughput > 0
+        if @type == 'gp3' && @throughput != nil && @throughput > 0
           root_device[:throguhput] == @throughput
         end
 
