@@ -459,8 +459,7 @@ module Bosh::AwsCloud
             expect(mappings).to  contain_exactly(ebs_disk, default_root)
           end
         end
-      end
-      context 'when type is gp3 and throughput is set' do
+        context 'when type is gp3 and throughput is set' do
         let(:ephemeral_disk) do
           {
             'type' => 'gp3',
@@ -503,6 +502,8 @@ module Bosh::AwsCloud
           expect(mappings).to  contain_exactly(ebs_disk, default_root)
         end
       end
+      end
+      
 
       context 'when specifying encrypted' do
         let(:vm_type) do
